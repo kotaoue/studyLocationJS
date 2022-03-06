@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>The study for behavior of `location` in JavaScript</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        async function main() {
+            console.log("before");
+            setTimeout(() => {
+                console.log("next tick");
+            }, 0);
+            console.log("after");
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            console.log("last");
+        }
+        main();
+    </script>
+</body>
+
+</html>
